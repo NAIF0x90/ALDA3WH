@@ -13,7 +13,7 @@
 <div class="thumbnail post_n">
 
 <b>
-<a href="news?id={{$n->id}}" ><h4 style="color:#bd720c;">{!! str_limit($n->title , 50) !!}<img  src="https://pbs.twimg.com/media/DQiDpZuXUAA_si2.jpg"  style="width:115px; "  align="right"> </h4></a>
+<a href="news?id={{$n->id}}" ><h4 style="color:#bd720c;">{!! str_limit($n->title , 50) !!}<img  src="https://pbs.twimg.com/media/DQiDpZuXUAA_si2.jpg"  style="height:110px; margin-top:-13px;"  align="right"> </h4></a>
 </b>
 <p style="color:gray; font-size:10px;">
     <i class="fa fa-calendar" aria-hidden="true" style="padding-right: 5px"></i>{{$n->created_at}}</p>

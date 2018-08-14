@@ -29,96 +29,80 @@
       <div class="textnavbar">
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7 ">
         
-        <?php
-  function intPart($float)
-  {
-      if ($float < -0.0000001)
-          return ceil($float - 0.0000001);
-      else
-          return floor($float + 0.0000001);
-  }
+           <?php
+   $nameday=date("l"); 
   
-  
-  function Greg2Hijri($day, $month, $year, $string = false)
-  {
-      $day   = (int) $day;
-      $month = (int) $month;
-      $year  = (int) $year;
-  
-  
-      if (($year > 1582) or (($year == 1582) and ($month > 10)) or (($year == 1582) and ($month == 10) and ($day > 14)))
-      {
-          $jd = intPart((1461*($year+4800+intPart(($month-14)/12)))/4)+intPart((367*($month-2-12*(intPart(($month-14)/12))))/12)-
-          intPart( (3* (intPart(  ($year+4900+    intPart( ($month-14)/12)     )/100)    )   ) /4)+$day-32074;
-      }
-      else
-      {
-          $jd = 367*$year-intPart((7*($year+5001+intPart(($month-9)/7)))/4)+intPart((275*$month)/9)+$day+1729777;
-      }
-  
-  
-      $l = $jd-1948440+10632;
-      $n = intPart(($l-1)/10631);
-      $l = $l-10631*$n+354;
-      $j = (intPart((10985-$l)/5316))*(intPart((50*$l)/17719))+(intPart($l/5670))*(intPart((43*$l)/15238));
-      $l = $l-(intPart((30-$j)/15))*(intPart((17719*$j)/50))-(intPart($j/16))*(intPart((15238*$j)/43))+29;
-      
-      $month = intPart((24*$l)/709);
-      $day   = $l-intPart((709*$month)/24);
-      $year  = 30*$n+$j-30;
-      
-      $date = array();
-      $date['year']  = $year;
-      $date['month'] = $month;
-      $date['day']   = $day;
-  
-  
-      if (!$string)
-          return $date;
-      else
-          return     "{$year}-{$month}-{$day}";
-  }
-  
-  
-  $hijriDate = Greg2Hijri(date("d"), date("m"), date("Y"));
-  
-  
-  $hijriMonth = array ("محرم", "صفر", "ربيع الاول", "ربيع الثاني", "جمادى الاولى", "جمادى الثاني", "رجب", "شعبان", "رمضان", "شوال", "ذو الحجة", "ذو القعدة");
-  
-  
-  $year = $hijriDate["year"];
-  $month = $hijriMonth[$hijriDate["month"]-1];
-  $day = $hijriDate["day"];
-  
-  $nameday=date("l"); 
-  
-  switch ($nameday) 
-  {
-  case "Saturday":  
-  $nameday="السبت"; 
-  break; 
-  case "Sunday":  
-  $nameday="الأحد"; 
-  break;  
-  case "Monday":  
-  $nameday="الاثنين"; 
-  break; 
-  case "Tuesday":  
-  $nameday="الثلاثاء"; 
-  break; 
-  case "Wednesday": 
-  $nameday="الأربعاء"; 
-  break; 
-  case "Thursday":  
-  $nameday="الخميس"; 
-  break; 
-  case "Friday":  
-  $nameday="الجمعة"; 
-  break;
-  }
-  
-  echo $nameday . " " . $hijriDate["day"] . " " . $hijriMonth[$hijriDate["month"]-1]  . " ". $hijriDate["year"]  ;
-  ?>
+   switch ($nameday) 
+   {
+   case "Saturday":  
+   $nameday="السبت"; 
+   break; 
+   case "Sunday":  
+   $nameday="الأحد"; 
+   break;  
+   case "Monday":  
+   $nameday="الاثنين"; 
+   break; 
+   case "Tuesday":  
+   $nameday="الثلاثاء"; 
+   break; 
+   case "Wednesday": 
+   $nameday="الأربعاء"; 
+   break; 
+   case "Thursday":  
+   $nameday="الخميس"; 
+   break; 
+   case "Friday":  
+   $nameday="الجمعة"; 
+   break;
+   }
+   
+ 
+   $namedaym=date("F"); 
+   
+   switch ($namedaym) 
+   {
+   case "January":  
+   $namedaym="يناير"; 
+   break; 
+   case "February":  
+   $namedaym="فبراير"; 
+   break;  
+   case "March":  
+   $namedaym="مارس"; 
+   break; 
+   case "April":  
+   $namedaym="ابريل"; 
+   break; 
+   case "May": 
+   $namedaym="مايو"; 
+   break; 
+   case "June":  
+   $namedaym="يونيو"; 
+   break; 
+   case "July":  
+   $namedaym="يوليو"; 
+   break;
+   case "August":  
+   $namedaym="اغسطس"; 
+   break;
+   case "September":  
+   $namedaym="سبتمبر"; 
+   break;
+   case "October":  
+   $namedaym="اكتوبر"; 
+   break;
+   case "November":  
+   $namedaym="نوفمبر"; 
+   break;
+   case "December":  
+   $namedaym="ديسمبر"; 
+   break;
+   }
+ 
+ 
+   echo '<i class="far fa-calendar-alt"></i>&nbsp;&nbsp;' . $nameday . " " . date("j $namedaym Y")  ; 
+   ?>
   </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5" align="left">
   
