@@ -114,7 +114,7 @@
 <a href="news?id={{$n->id}}" ><h4 style="color:#bd720c;"><img  src="{{$n->file_path}}"  style="height:110px; margin-top:-13px;"  align="right">{!! $n->title !!}</h4></b></a>
 <p style="color:gray; font-size:10px;"><i class="fa fa-calendar" aria-hidden="true" style="padding-right: 5px"></i>{{$n->created_at}}</p>
 <div id="myhide">
-    <p align="center" >  {!! str_limit($n->content, 50 ) !!}<a href="news?id={{$n->id}}" style="color:blue">أقراء المزيد...</a>
+    <p align="center" >  {!! str_limit($n->content, 50 ) !!}<a href="news?id={{$n->id}}" style="color:blue">&nbsp;&nbsp;</a>
 
 </p>
 </div>

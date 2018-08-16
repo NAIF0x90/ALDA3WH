@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>المكتب الدعوة بعفيف </title>       
+    <meta name="description" content="المكتب التعاوني للدعوة و الارشاد وتوعية الجاليات بمحافظة عفيف"/>
+        
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +14,6 @@
         <link href="{{ url('css/home.css') }}" rel="stylesheet">
         <link href="{{ url('css/cairo-font.css') }}" rel="stylesheet">
         <script src="js/moment-hijri.js"></script>
-        <title>مركز الدعوة والإرشاد بعفيف</title>
         
         
         </head>
@@ -101,7 +104,8 @@
    }
  
  
-   echo '<i class="far fa-calendar-alt"></i>&nbsp;&nbsp;' . $nameday . " " . date("j $namedaym Y")  ; 
+   echo '  <i class="fa fa-calendar" aria-hidden="true" ></i>&nbsp;&nbsp;' . $nameday . " " . date("j $namedaym Y")  ; 
+   
    ?>
   </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5" align="left">
